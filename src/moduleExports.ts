@@ -1,8 +1,7 @@
 export { Core } from '@huds0n/core';
 
 export {
-  AnimatedFlatList,
-  AnimatedLazyList,
+  AnimatedList,
   AnimationSheet,
   useAnimatorStyle,
 } from '@huds0n/animations';
