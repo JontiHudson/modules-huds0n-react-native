@@ -1,9 +1,3 @@
-import {
-  AnimatedView,
-  ColorFaderContainer,
-  ContentsFaderContainer,
-  TransitionContainer,
-} from '@huds0n/animations';
 import { Pressable, View } from '@huds0n/components';
 import { ThemerTypes } from '@huds0n/themer';
 
@@ -46,26 +40,6 @@ export function createThemedViews<cT extends ThemerTypes.CustomTheme>(
     $Separator,
 
     $View,
-
-    $AnimatedView: Themer.createComponent(
-      AnimatedView,
-      AnimatedView.theming.props,
-    ).addProps({ style: { borderColor: 'BORDER' } }),
-
-    $ColorFaderContainer: Themer.createComponent(
-      ColorFaderContainer,
-      ColorFaderContainer.theming.props,
-    ).addProps({ style: { borderColor: 'BORDER' } }),
-
-    $ContentsFaderContainer: Themer.createComponent(
-      ContentsFaderContainer,
-      ContentsFaderContainer.theming.props,
-    ).addProps({ style: { borderColor: 'BORDER', flex: 1 } }),
-
-    $TransitionContainer: Themer.createComponent(
-      TransitionContainer,
-      TransitionContainer.theming.props,
-    ).addProps({ style: { borderColor: 'BORDER' } }),
 
     $Pressable: Themer.createComponent(
       Pressable,

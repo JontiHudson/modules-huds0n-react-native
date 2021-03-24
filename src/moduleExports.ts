@@ -2,7 +2,12 @@ export { Core } from '@huds0n/core';
 
 export {
   AnimatedList,
+  AnimatedText,
+  AnimatedView,
   AnimationSheet,
+  ColorFaderContainer,
+  ContentsFaderContainer,
+  TransitionContainer,
   useAnimatorStyle,
 } from '@huds0n/animations';
 import type * as AnimationTypes from '@huds0n/animations';

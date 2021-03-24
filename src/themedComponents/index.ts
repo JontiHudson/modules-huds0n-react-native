@@ -1,6 +1,5 @@
 import { Image } from 'react-native';
 
-import { AnimatedText } from '@huds0n/animations';
 import { FadeOverlay, ScrollView } from '@huds0n/components';
 import { ThemerTypes } from '@huds0n/themer';
 
@@ -48,19 +47,5 @@ export function createThemedComponents<cT extends ThemerTypes.CustomTheme>(
     }).setMemo(true),
 
     $Toast: createThemedToast(Themer),
-
-    $AnimatedText: Themer.createComponent(
-      AnimatedText,
-      AnimatedText.theming.props,
-    )
-      .addProps({
-        style: {
-          borderColor: 'BORDER',
-          color: 'TEXT',
-          fontSize: 'BODY',
-        },
-        useColorScheme: true,
-      })
-      .setMemo(true),
   };
 }
