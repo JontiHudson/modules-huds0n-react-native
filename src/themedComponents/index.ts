@@ -1,5 +1,6 @@
 import { Image } from 'react-native';
 
+import { AnimatedText } from '@huds0n/animations';
 import { FadeOverlay, ScrollView } from '@huds0n/components';
 import { ThemerTypes } from '@huds0n/themer';
 
@@ -15,13 +16,13 @@ export function createThemedComponents<cT extends ThemerTypes.CustomTheme>(
   Themer: ThemerTypes.ThemerClass<cT>,
 ) {
   return {
-    ...createThemedIcon(Themer),
-    ...createThemedInputs(Themer),
-    ...createThemedViews(Themer),
+    ...createThemedIcon<cT>(Themer),
+    ...createThemedInputs<cT>(Themer),
+    ...createThemedViews<cT>(Themer),
 
-    $Button: createThemedButton(Themer),
+    $Button: createThemedButton<cT>(Themer),
 
-    $createFAB: createThemedFAB(Themer),
+    $createFAB: createThemedFAB<cT>(Themer),
 
     $FadeOverlay: Themer.createComponent(FadeOverlay, FadeOverlay.theming.props)
       .addProps({ color: 'BACKGROUND', useColorScheme: true })
@@ -33,7 +34,7 @@ export function createThemedComponents<cT extends ThemerTypes.CustomTheme>(
       .addProps({ style: { borderColor: 'BORDER' }, useColorScheme: true })
       .setMemo(true),
 
-    $ScreenManager: createThemedScreenManager(Themer),
+    $ScreenManager: createThemedScreenManager<cT>(Themer),
 
     $ScrollView: Themer.createComponent(ScrollView, ScrollView.theming.props),
 
@@ -46,6 +47,20 @@ export function createThemedComponents<cT extends ThemerTypes.CustomTheme>(
       useColorScheme: true,
     }).setMemo(true),
 
-    $Toast: createThemedToast(Themer),
+    $Toast: createThemedToast<cT>(Themer),
+
+    $AnimatedText: Themer.createComponent(
+      AnimatedText,
+      AnimatedText.theming.props,
+    )
+      .addProps({
+        style: {
+          borderColor: 'BORDER',
+          color: 'TEXT',
+          fontSize: 'BODY',
+        },
+        useColorScheme: true,
+      })
+      .setMemo(true),
   };
 }
